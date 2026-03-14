@@ -35,29 +35,25 @@ const About = () => {
                 <p className="text-xl font-bold">Greetings!</p>
                 <br></br>
                 <ul>
-                  <li className="flex items-center gap-2">
-                    <FaLaptopCode /> I'm Pulkit Shubham, currently immersed in
-                    the exciting world of Computer Science and Engineering at
-                    Lovely Professional University.
+                  <li className="flex items-center gap-2 mb-2">
+                    <FaLaptopCode className="min-w-fit" /> I'm Abhishek Goyal, an ambitious developer
+                    with a B.Tech in Computer Science and Engineering from Lovely Professional University.
+                  </li>
+                  <li className="flex items-center gap-2 mb-2">
+                    <FaGraduationCap className="min-w-fit" /> I hold a strong academic track record, maintaining
+                    an 8.55 CGPA.
+                  </li>
+                  <li className="flex items-center gap-2 mb-2">
+                    <FaAward className="min-w-fit" /> I am highly competitive in programming, having achieved Global Rank 16th
+                    in CodeChef Starters 131 Div 4 and solved over 310 LeetCode problems.
+                  </li>
+                  <li className="flex items-center gap-2 mb-2">
+                    <FaLightbulb className="min-w-fit" /> My expertise includes Full-Stack Development (MERN, PHP) and
+                    Data Structures & Algorithms in multiple languages.
                   </li>
                   <li className="flex items-center gap-2">
-                    <FaGraduationCap /> I've consistently achieved good results
-                    in both 10th and 12th grades, laying a strong foundation for
-                    my academic pursuits.
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaAward /> In addition to my studies, I've had the honor of
-                    being a Gold Medalist in the International Maths Olympiad
-                    (IMO) for six years during school.
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaLightbulb /> I bring a unique work style to the table,
-                    characterized by a passion for intellectual challenges and a
-                    fresh, innovative approach to responsibilities.
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaRocket /> My aim is to master technical skills and forge
-                    a fulfilling career in Computer Science and Engineering.
+                    <FaRocket className="min-w-fit" /> My goal is to build secure, scalable solutions and continually push
+                    the boundaries of my technical capabilities.
                   </li>
                 </ul>
               </p>
@@ -65,35 +61,34 @@ const About = () => {
               <div className="flex flex-col sm:flex-row gap-x-6 lg:gap-x-10 mb-12 justify-center lg:justify-between">
                 <div className="flex-1 text-center mb-4 sm:mb-0">
                   <div className="text-[40px] font-tertiary text-gradient mb-2">
-                    {inView ? <CountUp start={0} end={2} duration={3} /> : null}
-                    K+
+                    Global Rank 16th
                   </div>
                   <div className="font-primary text-sm tracking-[2px]">
-                    Linkedin
+                    CodeChef Starters 131 Div 4
                     <br />
-                    Connections
+                    (2★, 1530)
                   </div>
                 </div>
                 <div className="flex-1 text-center">
                   <div className="text-[40px] font-tertiary text-gradient mb-2">
                     {inView ? (
-                      <CountUp start={325} end={350} duration={3} />
+                      <CountUp start={250} end={310} duration={3} />
                     ) : null}
                     +
                   </div>
                   <div className="font-primary text-sm tracking-[2px]">
-                    DSA
+                    LeetCode
                     <br />
                     Problems Solved
                   </div>
                 </div>
                 <div className="flex-1 text-center">
                   <div className="text-[40px] font-tertiary text-gradient mb-2">
-                    {inView ? <CountUp start={0} end={8} duration={3} /> : null}
+                    {inView ? <CountUp start={0} end={5} duration={3} /> : null}
                     +
                   </div>
                   <div className="font-primary text-sm tracking-[2px]">
-                    Projects
+                    Significant Projects
                     <br />
                     Completed
                   </div>

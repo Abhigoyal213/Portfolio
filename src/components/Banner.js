@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { SiLeetcode } from "react-icons/si";
 import { motion } from "framer-motion";
@@ -13,7 +13,7 @@ const Banner = () => {
       id="home"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-9">
+        <div className="flex flex-col-reverse gap-y-8 lg:flex-row lg:items-center lg:gap-x-9">
           {/*text*/}
           <div className="flex-1 text-center font-secondary lg:text-left">
             <motion.h1
@@ -23,7 +23,7 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="text-[55px] font-bold leading-[0.8] lg:text-[85px]"
             >
-              PULKIT <span>SHUBHAM</span>
+              ABHISHEK <span>GOYAL</span>
             </motion.h1>
             <motion.div
               variants={fadeIn("up", 0.4)}
@@ -36,11 +36,11 @@ const Banner = () => {
               <span className="text-white mr-4">I am a</span>
               <TypeAnimation
                 sequence={[
-                  "Android Developer",
+                  "Full Stack Developer",
                   2000,
                   "C++ Programmer",
                   2000,
-                  "Data Science Trailblazer",
+                  "Problem Solver",
                   2000,
                 ]}
                 speed={80}
@@ -56,9 +56,9 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="mb-8 max-w-lg mx-auto lg:mx-0"
             >
-              Currently immersed in the exciting world of Computer Science and
-              Engineering. My journey is fueled by a genuine love for technology
-              and an eagerness to overcome challenges.
+              Driven Technophile passionate about software engineering, full-stack
+              development, and algorithmic problem-solving. Constantly learning
+              and building innovative solutions.
             </motion.p>
             <motion.div
               variants={fadeIn("up", 0.6)}
@@ -70,7 +70,7 @@ const Banner = () => {
               <button
                 className="btn btn-lg"
                 style={{ display: "inline-flex", alignItems: "center" }}
-                onClick={() => window.open("../CV.pdf", "_blank")} // Open PDF in a new tab
+                onClick={() => window.open("../Abhi_generalized_cv.pdf", "_blank")} // Open PDF in a new tab
               >
                 Download CV
                 <FiDownload style={{ marginLeft: "5px" }} />{" "}
@@ -86,19 +86,17 @@ const Banner = () => {
               className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0"
             >
               <a
-                href="https://www.linkedin.com/in/pulkit-shubham/"
-                target="blank"
+                href="https://www.linkedin.com/in/abhishekgoyal213/"
+                target="_blank"
+                rel="noreferrer"
               >
                 <FaLinkedin />
               </a>
-              <a href="https://github.com/PulkitShubham" target="blank">
+              <a href="https://github.com/Abhigoyal213" target="_blank" rel="noreferrer">
                 <FaGithub />
               </a>
-              <a href="https://twitter.com/pulkits990" target="blank">
-                <FaTwitter />
-              </a>
               <a
-                href="https://leetcode.com/pulkit_shubham/"
+                href="https://leetcode.com/u/Abhigoyal213/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -111,9 +109,9 @@ const Banner = () => {
             variants={fadeIn("down", 0.5)}
             initial="hidden"
             whileInView={"show"}
-            className="hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px] mx-auto"
+            className="flex flex-1 max-w-[320px] lg:max-w-[482px] mx-auto rounded-full overflow-hidden mb-8 lg:mb-0"
           >
-            <img src="../avtar.png" alt="Avatar" />
+            <img src="../abhi.jpeg" alt="Avatar" className="rounded-full w-full h-auto object-cover" />
           </motion.div>
         </div>
       </div>

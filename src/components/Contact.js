@@ -74,9 +74,13 @@ const Contact = () => {
               <h4 className="text-xl uppercase text-accent font-medium mb-2 tracking-wide">
                 Get in touch
               </h4>
-              <h2 className="text-[45px] lg:text-[90px] leading-none mb-12">
+              <h2 className="text-[45px] lg:text-[90px] leading-none mb-6">
                 Let's work <br /> together!
               </h2>
+              <div className="flex flex-col gap-y-2 mt-4 text-white/70">
+                <p>Email: abhishekgoyal29250@gmail.com</p>
+                <p>Mobile: +91-8107235363</p>
+              </div>
             </div>
           </motion.div>
 

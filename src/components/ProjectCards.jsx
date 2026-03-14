@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { AiOutlineGithub } from "react-icons/ai"; // Import the GitHub icon
+import { AiOutlineGithub, AiOutlineLink } from "react-icons/ai"; // Import the GitHub and Link icons
 
 // Styled Components
 const Description = styled.div`
@@ -42,9 +42,9 @@ const Card = styled.div`
   padding: 26px 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 14px;
-  height: 500px; /* Removed fixed height */
-  min-height: 500px; /* Set minimum height */
+  height: 100%;
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 
   &:hover {
@@ -178,6 +178,18 @@ const GitHubIcon = styled(AiOutlineGithub)`
   font-size: 20px;
   color: ${({ theme }) => theme.text_secondary};
   transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.5); // Enlarges the icon on hover
+  }
+`;
+
+const LiveLinkIcon = styled(AiOutlineLink)`
+  font-size: 20px;
+  color: ${({ theme }) => theme.primary};
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.5); // Enlarges the icon on hover
@@ -253,7 +265,20 @@ const ProjectCards = ({ project }) => {
         {/* Add error handling for images */}
         <TitleWrapper>
           <Title>{project.title}</Title>
-          <GitHubIcon onClick={openGitHubLink}></GitHubIcon>
+          <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+            {project.github && project.github !== "#" && (
+              <GitHubIcon onClick={openGitHubLink} title="View Source on GitHub" />
+            )}
+            {project.liveUrl && (
+              <LiveLinkIcon 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(project.liveUrl, "_blank");
+                }}
+                title="View Live App"
+              />
+            )}
+          </div>
         </TitleWrapper>
         <Date>{project.date}</Date> {/* Date is now shown after the title */}
         <Tags>
@@ -273,10 +298,27 @@ const ProjectCards = ({ project }) => {
       {isModalOpen && (
         <Modal>
           <ModalContent>
-            <CloseButton onClick={closeModal}>×</CloseButton>
-            <h2>{project.title}</h2>
-            <Image
-              src={project.image}
+            <div style={{ position: "relative" }}>
+              <CloseButton onClick={closeModal} style={{ zIndex: 10 }}>×</CloseButton>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px", paddingRight: "30px" }}>
+                <h2>{project.title}</h2>
+                <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                  {project.github && project.github !== "#" && (
+                    <GitHubIcon onClick={openGitHubLink} title="View Source on GitHub" />
+                  )}
+                  {project.liveUrl && (
+                    <LiveLinkIcon 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(project.liveUrl, "_blank");
+                      }}
+                      title="View Live App"
+                    />
+                  )}
+                </div>
+              </div>
+              <Image
+                src={project.image}
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = "../fallback-image.png";
@@ -293,6 +335,7 @@ const ProjectCards = ({ project }) => {
                 <Avatar key={index} src={member.img} />
               ))}
             </Members>
+          </div>
           </ModalContent>
         </Modal>
       )}
