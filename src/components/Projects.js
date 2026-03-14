@@ -4,7 +4,6 @@ import {
   Container,
   Wrapper,
   Title,
-  Desc,
   CardContainer,
 } from "../components/ProjectsStyle";
 import ProjectCard from "./ProjectCards"; // Adjust the import according to your file structure
@@ -12,7 +11,7 @@ import { projects } from "../components/constants";
 import Modal from "./Modal"; // Import the modal
 
 const Projects = () => {
-  const [toggle, setToggle] = useState("all");
+  const toggle = "all";
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 

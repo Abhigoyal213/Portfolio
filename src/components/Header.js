@@ -6,7 +6,7 @@ const Header = () => {
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           {/*logo*/}
-          <a href="#">
+          <a href="/">
             <img src="../Abhi_logo (2).png" alt="Abhishek Goyal" className="h-20" />
           </a>
           {/*button*/}

@@ -117,13 +117,7 @@ const Tag = styled.span`
   border: 0.1px solid #854ce6;
 `;
 
-const Details = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-  padding: 0px 2px;
-`;
+
 
 const TitleWrapper = styled.div`
   display: flex;
@@ -224,9 +218,7 @@ const ProjectCards = ({ project }) => {
   const [expanded, setExpanded] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const toggleDescription = () => {
-    setExpanded(!expanded);
-  };
+
 
   const handleMouseLeave = () => {
     setExpanded(false);
