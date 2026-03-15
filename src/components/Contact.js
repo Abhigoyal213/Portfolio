@@ -29,10 +29,10 @@ const Contact = () => {
     // If validation passes, send the email
     emailjs
       .sendForm(
-        "service_hpeo995", // Your EmailJS service ID
-        "template_g42lwnv", // Your EmailJS template ID
+        "service_nui8ptm", // Your EmailJS service ID
+        "template_5atxt74", // Your EmailJS template ID
         form.current,
-        "w2S50GEPJwIeoBxXr" // Your EmailJS public key
+        "0CSLSsUlRAHlxNn_b" // Your EmailJS public key
       )
       .then(
         (result) => {
