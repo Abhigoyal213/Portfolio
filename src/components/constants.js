@@ -46,7 +46,7 @@ export const skills = [
 export const education = [
   {
     id: 0,
-    img: "../lpu.png",
+    img: "/lpu.png",
     school: "Lovely Professional University Phagwara, Punjab",
     date: "Aug 2023 - Present",
     grade: "8.55 CGPA",
@@ -55,7 +55,7 @@ export const education = [
   },
   {
     id: 1,
-    img: "../dps.jpg", 
+    img: "/dps.jpg", 
     school: "SHRI KRISHNA ACA SR SEC School Dholpur, Rajasthan",
     date: "Mar 2021 - May 2022",
     grade: "72.60%",
@@ -64,7 +64,7 @@ export const education = [
   },
   {
     id: 2,
-    img: "../gvps.jpg", 
+    img: "/gvps.jpg", 
     school: "Mithlesh Aca. Sec. Eng. Med. School Dholpur, Rajasthan",
     date: "May 2019 - May 2020",
     grade: "93.83%",

@@ -70,7 +70,7 @@ const Banner = () => {
               <button
                 className="btn btn-lg"
                 style={{ display: "inline-flex", alignItems: "center" }}
-                onClick={() => window.open("../Abhi_generalized_cv.pdf", "_blank")} // Open PDF in a new tab
+                onClick={() => window.open("/CV.pdf", "_blank")} // Open PDF in a new tab
               >
                 Download CV
                 <FiDownload style={{ marginLeft: "5px" }} />{" "}
@@ -111,7 +111,7 @@ const Banner = () => {
             whileInView={"show"}
             className="flex flex-1 max-w-[320px] lg:max-w-[482px] mx-auto rounded-full overflow-hidden mb-8 lg:mb-0"
           >
-            <img src="../abhi.jpeg" alt="Avatar" className="rounded-full w-full h-auto object-cover" />
+            <img src="/abhi.jpeg" alt="Avatar" className="rounded-full w-full h-auto object-cover" />
           </motion.div>
         </div>
       </div>
