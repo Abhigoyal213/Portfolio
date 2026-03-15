@@ -7,7 +7,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/*logo*/}
           <a href="/">
-            <img src="../Abhi_logo (2).png" alt="Abhishek Goyal" className="h-20" />
+            <img src="/logo.png" alt="Abhishek Goyal" className="h-20" />
           </a>
           {/*button*/}
           <a

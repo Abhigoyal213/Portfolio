@@ -55,7 +55,7 @@ export const education = [
   },
   {
     id: 1,
-    img: "/dps.jpg", 
+    img: "/dps.jpg",
     school: "SHRI KRISHNA ACA SR SEC School Dholpur, Rajasthan",
     date: "Mar 2021 - May 2022",
     grade: "72.60%",
@@ -64,7 +64,7 @@ export const education = [
   },
   {
     id: 2,
-    img: "/gvps.jpg", 
+    img: "/gvps.jpg",
     school: "Mithlesh Aca. Sec. Eng. Med. School Dholpur, Rajasthan",
     date: "May 2019 - May 2020",
     grade: "93.83%",
@@ -79,7 +79,7 @@ export const projects = [
     title: "SafeLynx – Secure Document Hub",
     date: "Oct 2025 - Dec 2025",
     description: "Designed a secure web-based platform to centralize personal, professional, and government document storage while ensuring controlled access, privacy, and easy retrieval. Implemented a full-stack web application using React, Node.js, Express, and MongoDB with secure cloud storage, authentication, document management, and user-centric UI features. Developed a secure document management system supporting file upload, document sharing, role-based authorization, and real-time storage monitoring with scalable backend integration.",
-    image: "https://images.unsplash.com/photo-1618044733300-9472054094ee?q=80&w=800&auto=format&fit=crop", // placeholder image since SafeLynx doesn't have an asset
+    image: "/safelynx.png",
     tags: ["HTML", "JavaScript", "React.js", "Node.js", "MongoDB"],
     category: "web app",
     github: "https://github.com/Abhigoyal213/SafeLynx-Secure-Document-Hub",
@@ -90,7 +90,7 @@ export const projects = [
     title: "UniChat – Real time chat Application",
     date: "Feb 2025 - Apr 2025",
     description: "Planned a secure backend using PHP and MySQL, handling user authentication, session management, and optimized database operations for real-time messaging. Initiated a modular and maintainable PHP architecture with features such as message timestamps, user online/offline status indicators, and a secure password reset system. Created a dynamic front-end using JavaScript and AJAX to enable real-time one-to-one chat functionality with seamless updates without page reloads, improving performance and user experience.",
-    image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?q=80&w=800&auto=format&fit=crop", // placeholder image
+    image: "/unichat.png",
     tags: ["HTML", "Tailwind CSS", "JavaScript", "React", "PHP", "AJAX"],
     category: "web app",
     github: "https://github.com/Abhigoyal213/uniChat_",
@@ -100,7 +100,7 @@ export const projects = [
     title: "Sudoku Solver",
     date: "Jun 2025 - Aug 2025",
     description: "Built an automated Sudoku Solver system aimed at reliably validating and solving Sudoku boards ensuring accurate results through a backend-driven workflow. Developed a REST-based backend that validates board states and solves puzzles using an optimized backtracking algorithm, with seamless JSON communication handling between components. Achieved consistent, fast, and accurate puzzle solving with robust input validation, making the solution suitable for educational tools, logic-based gaming platforms, and interactive web applications.",
-    image: "https://images.unsplash.com/photo-1631049035182-249067d7618e?q=80&w=800&auto=format&fit=crop", // placeholder image
+    image: "/sudoku.png",
     tags: ["HTML", "CSS", "JavaScript", "React.js", "REST API", "Java"],
     category: "web app",
     github: "https://github.com/Abhigoyal213/Sudoku-Solver",

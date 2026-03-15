@@ -70,7 +70,7 @@ const Banner = () => {
               <button
                 className="btn btn-lg"
                 style={{ display: "inline-flex", alignItems: "center" }}
-                onClick={() => window.open("/CV.pdf", "_blank")} // Open PDF in a new tab
+                onClick={() => window.open("/Abhi_generalized_cv.pdf", "_blank")} // Open PDF in a new tab
               >
                 Download CV
                 <FiDownload style={{ marginLeft: "5px" }} />{" "}
