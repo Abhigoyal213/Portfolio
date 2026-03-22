@@ -36,17 +36,18 @@ const Span = styled.span`
 const Card = styled.div`
   width: 650px;
   border-radius: 10px;
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  box-shadow: 0px 4px 24px var(--accent-glow);
   padding: 12px 16px;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  position: relative;
+  overflow: hidden;
   transition: all 0.3s ease-in-out;
+  border: 0.1px solid var(--accent);
+  
   &:hover {
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px var(--accent-glow);
     transform: translateY(-5px);
   }
   @media only screen and (max-width: 768px) {
@@ -63,7 +64,6 @@ const Card = styled.div`
     overflow: visible;
     -webkit-line-clamp: unset;
   }
-  border: 0.1px solid #854ce6;
 `;
 
 const Top = styled.div`

@@ -1,6 +1,7 @@
 import React from "react";
 import CountUp from "react-countup";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 
 // Import React Icons
 import {
@@ -12,13 +13,15 @@ import {
 } from "react-icons/fa";
 
 const About = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.5,
-  });
-
   return (
-    <section className="section mt-16" id="about" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section className="section mt-16" id="about">
+      <motion.div 
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: true, amount: 0.2 }}
+        className="container mx-auto px-4"
+      >
         <div className="flex flex-col gap-y-10 lg:flex-row">
           {/* Box wrapper with rounded borders, accent shadow, and transparent background */}
           <div className="w-full p-6 bg-transparent border-2 border-accent rounded-lg shadow-lg shadow-accent">
@@ -55,43 +58,7 @@ const About = () => {
                   </li>
                 </ul>
               </p>
-              {/* stats */}
-              <div className="flex flex-col sm:flex-row gap-x-6 lg:gap-x-10 mb-12 justify-center lg:justify-between">
-                <div className="flex-1 text-center mb-4 sm:mb-0">
-                  <div className="text-[40px] font-tertiary text-gradient mb-2">
-                    Global Rank 16th
-                  </div>
-                  <div className="font-primary text-sm tracking-[2px]">
-                    CodeChef Starters 131 Div 4
-                    <br />
-                    (2★, 1530)
-                  </div>
-                </div>
-                <div className="flex-1 text-center">
-                  <div className="text-[40px] font-tertiary text-gradient mb-2">
-                    {inView ? (
-                      <CountUp start={250} end={310} duration={3} />
-                    ) : null}
-                    +
-                  </div>
-                  <div className="font-primary text-sm tracking-[2px]">
-                    LeetCode
-                    <br />
-                    Problems Solved
-                  </div>
-                </div>
-                <div className="flex-1 text-center">
-                  <div className="text-[40px] font-tertiary text-gradient mb-2">
-                    {inView ? <CountUp start={0} end={5} duration={3} /> : null}
-                    +
-                  </div>
-                  <div className="font-primary text-sm tracking-[2px]">
-                    Significant Projects
-                    <br />
-                    Completed
-                  </div>
-                </div>
-              </div>
+
               {/* Contact button below stats */}
               {/* <div className="flex justify-center lg:justify-center"> */}
               {/* <button className="btn btn-lg">Contact me</button> */}
@@ -99,7 +66,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+        </motion.div>
     </section>
   );
 };

@@ -8,6 +8,8 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import { education } from "../components/constants";
 import EducationCard from "../components/EducationCard";
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 
 const Container = styled.div`
   display: flex;
@@ -22,7 +24,7 @@ const Container = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -86,14 +88,21 @@ const Education = () => {
         <TimelineSection>
           <Timeline>
             {education.map((education, index) => (
-              <TimelineItem>
+              <TimelineItem key={index}>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
-                  <EducationCard education={education} />
+                  <motion.div
+                    variants={fadeIn("up", index * 0.15)}
+                    initial="hidden"
+                    whileInView={"show"}
+                    viewport={{ once: true, amount: 0.1 }}
+                  >
+                    <EducationCard education={education} />
+                  </motion.div>
                 </TimelineContent>
                 <TimelineSeparator>
                   <TimelineDot variant="outlined" color="secondary" />
                   {index !== education.length && (
-                    <TimelineConnector style={{ background: "#854CE6" }} />
+                    <TimelineConnector style={{ background: "var(--accent)" }} />
                   )}
                 </TimelineSeparator>
               </TimelineItem>

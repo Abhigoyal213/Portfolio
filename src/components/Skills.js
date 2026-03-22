@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { skills } from "../components/constants";
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 
 const Container = styled.div`
   display: flex;
@@ -11,7 +13,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -60,14 +62,14 @@ const Skill = styled.div`
   width: 100%;
   max-width: 500px;
   background: ${({ theme }) => theme.card};
-  border: 2px solid #854ce6; /* Thicker accent border */
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  border: 2px solid var(--accent); /* Thicker accent border */
+  box-shadow: 0px 4px 24px var(--accent-glow);
   border-radius: 16px;
   padding: 18px 36px;
   transition: border-color 0.3s, transform 0.3s; /* Smooth transition */
 
   &:hover {
-    border-color: #5a3fa0; /* Change border color on hover */
+    border-color: var(--accent-secondary); /* Change border color on hover */
   }
 
   @media (max-width: 768px) {
@@ -108,7 +110,7 @@ const SkillItem = styled.div`
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border: 0.1px solid #854ce6;
+  border: 0.1px solid var(--accent);
 
   @media (max-width: 768px) {
     font-size: 14px;
@@ -126,7 +128,7 @@ const SkillImage = styled.img`
   height: 24px;
 `;
 
-const SkillCard = ({ skill }) => {
+const SkillCard = ({ skill, index }) => {
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [scale, setScale] = useState(1); // State for scale
 
@@ -148,14 +150,20 @@ const SkillCard = ({ skill }) => {
   };
 
   return (
-    <Skill
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter} // Handle scale on mouse enter
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transform: `perspective(1000px) rotateY(${tilt.x}deg) rotateX(${tilt.y}deg) scale(${scale})`, // Include scale in the transform
-      }}
+    <motion.div
+      variants={fadeIn("up", index * 0.15)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: true, amount: 0.1 }}
     >
+      <Skill
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter} // Handle scale on mouse enter
+        onMouseLeave={handleMouseLeave}
+        style={{
+          transform: `perspective(1000px) rotateY(${tilt.x}deg) rotateX(${tilt.y}deg) scale(${scale})`, // Include scale in the transform
+        }}
+      >
       <SkillTitle>{skill.title}</SkillTitle>
       <SkillList>
         {skill.skills.map((item) => (
@@ -165,7 +173,8 @@ const SkillCard = ({ skill }) => {
           </SkillItem>
         ))}
       </SkillList>
-    </Skill>
+      </Skill>
+    </motion.div>
   );
 };
 
@@ -179,8 +188,8 @@ const Skills = () => {
           years.
         </Desc>
         <SkillsContainer>
-          {skills.map((skill) => (
-            <SkillCard key={skill.title} skill={skill} />
+          {skills.map((skill, index) => (
+            <SkillCard key={skill.title} skill={skill} index={index} />
           ))}
         </SkillsContainer>
       </Wrapper>

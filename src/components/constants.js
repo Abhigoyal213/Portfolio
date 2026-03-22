@@ -76,9 +76,9 @@ export const education = [
 export const projects = [
   {
     id: 0,
-    title: "SafeLynx – Secure Document Hub",
-    date: "Oct 2025 - Dec 2025",
-    description: "Designed a secure web-based platform to centralize personal, professional, and government document storage while ensuring controlled access, privacy, and easy retrieval. Implemented a full-stack web application using React, Node.js, Express, and MongoDB with secure cloud storage, authentication, document management, and user-centric UI features. Developed a secure document management system supporting file upload, document sharing, role-based authorization, and real-time storage monitoring with scalable backend integration.",
+    title: "SafeLynx — Secure Document Hub",
+    date: "Oct '25 — Dec '25",
+    description: "A secure MERN-stack platform for centralizing and managing sensitive personal and government documents. Features role-based access control, file sharing, and real-time storage monitoring.",
     image: "/safelynx.png",
     tags: ["HTML", "JavaScript", "React.js", "Node.js", "MongoDB"],
     category: "web app",
@@ -87,9 +87,9 @@ export const projects = [
   },
   {
     id: 1,
-    title: "UniChat – Real time chat Application",
-    date: "Feb 2025 - Apr 2025",
-    description: "Planned a secure backend using PHP and MySQL, handling user authentication, session management, and optimized database operations for real-time messaging. Initiated a modular and maintainable PHP architecture with features such as message timestamps, user online/offline status indicators, and a secure password reset system. Created a dynamic front-end using JavaScript and AJAX to enable real-time one-to-one chat functionality with seamless updates without page reloads, improving performance and user experience.",
+    title: "UniChat — Real Time Chat Application",
+    date: "Feb '25 — Apr '25",
+    description: "Real-time communication platform built on a modular PHP & MySQL backend. Features live messaging via AJAX, online/offline status tracking, and robust session management.",
     image: "/unichat.png",
     tags: ["HTML", "Tailwind CSS", "JavaScript", "React", "PHP", "AJAX"],
     category: "web app",
@@ -98,12 +98,29 @@ export const projects = [
   {
     id: 2,
     title: "Sudoku Solver",
-    date: "Jun 2025 - Aug 2025",
-    description: "Built an automated Sudoku Solver system aimed at reliably validating and solving Sudoku boards ensuring accurate results through a backend-driven workflow. Developed a REST-based backend that validates board states and solves puzzles using an optimized backtracking algorithm, with seamless JSON communication handling between components. Achieved consistent, fast, and accurate puzzle solving with robust input validation, making the solution suitable for educational tools, logic-based gaming platforms, and interactive web applications.",
+    date: "Jun '25 — Aug '25",
+    description: "Interactive web application powered by a Java REST API using an optimized backtracking algorithm. Automatically validates grid states and mathematically solves complex puzzles natively.",
     image: "/sudoku.png",
     tags: ["HTML", "CSS", "JavaScript", "React.js", "REST API", "Java"],
     category: "web app",
     github: "https://github.com/Abhigoyal213/Sudoku-Solver",
     liveUrl: "https://sudoku-solver-xm0t.onrender.com/",
   }
+];
+
+export const certifications = [
+  {
+    title: "Cloud Computing",
+    issuer: "NPTEL",
+    link: "https://drive.google.com/file/d/1Dx3QqI5MUkF65AyQ06ko6bcfxW6RUijR/view?usp=drive_link",
+    image: "/nptel.png",
+    period: "Jun '25",
+  },
+  {
+    title: "Postman API Fundamentals Student Expert",
+    issuer: "Postman",
+    link: "https://drive.google.com/file/d/11b-Y1mJLahOkGXA_1f3avHrX8-NTDqe5/view?usp=drive_link",
+    image: "/postman.png",
+    period: "Sep '25",
+  },
 ];

@@ -6,19 +6,35 @@ import Nav from "./components/Nav";
 import About from "./components/About";
 import Education from "./components/Education";
 import Projects from "./components/Projects";
+import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
+import ThemeSwitcher from "./components/ThemeSwitcher";
+import ParticleBackground from "./components/ParticleBackground";
+import MarqueeTicker from "./components/MarqueeTicker";
+import GhostCursor from "./components/GhostCursor";
+import { useTheme } from "./contexts/ThemeContext";
 
 const App = () => {
+  const { particleMode, activeProfile } = useTheme();
+  
   return (
-    <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
+    <div className="overflow-hidden min-h-screen relative">
+      {particleMode === "ghost" ? (
+        <GhostCursor color={activeProfile ? activeProfile.vars['--accent'] : "#B19EEF"} />
+      ) : (
+        <ParticleBackground />
+      )}
+      <ThemeSwitcher />
       <Header />
       <Banner />
       <Nav />
       <About />
       <Skills />
+      <MarqueeTicker />
       <Education />
       <Projects />
+      <Certifications />
       <Contact />
       {/* <div className="h-[4000px]"></div> */}
     </div>
