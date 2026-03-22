@@ -436,6 +436,7 @@ const GhostCursor = ({
       window.removeEventListener('pointerenter', onPointerEnter);
       window.removeEventListener('pointerleave', onPointerLeave);
       window.removeEventListener('resize', resize);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       resizeObsRef.current?.disconnect();
 
       scene.clear();
@@ -452,6 +453,7 @@ const GhostCursor = ({
         renderer.domElement.parentElement.removeChild(renderer.domElement);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     trailLength,
     inertia,
