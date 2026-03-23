@@ -117,24 +117,20 @@ const Projects = () => {
                 <div className="flex items-center gap-6">
                   {project.liveUrl && (
                     <motion.a
-                      href={project.liveUrl === "#" ? undefined : project.liveUrl}
+                      href={project.liveUrl}
                       target={project.liveUrl === "#" ? undefined : "_blank"}
                       rel={project.liveUrl === "#" ? undefined : "noopener noreferrer"}
-                      className={`inline-flex items-center justify-center gap-2 rounded-xl font-bold transition-all shadow-lg ${
-                        project.liveUrl === "#" ? "px-4 py-3.5" : "px-6 py-3.5"
-                      }`}
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold transition-all shadow-lg"
                       style={{
-                        background: project.liveUrl === "#" ? "rgba(255,255,255,0.05)" : "var(--accent)",
-                        color: project.liveUrl === "#" ? "var(--accent)" : "var(--bg-primary)",
-                        border: project.liveUrl === "#" ? "1px solid var(--border-subtle)" : "none",
+                        background: "var(--accent)",
+                        color: "var(--bg-primary)",
                         cursor: project.liveUrl === "#" ? "default" : "pointer",
                       }}
                       whileHover={project.liveUrl === "#" ? {} : { scale: 1.05, boxShadow: "0 4px 25px var(--accent-glow)" }}
                       whileTap={project.liveUrl === "#" ? {} : { scale: 0.95 }}
                       title={project.liveUrl === "#" ? "Live Demo Coming Soon" : "View Live App"}
                     >
-                      <FaExternalLinkAlt size={16} />
-                      {project.liveUrl !== "#" && "Live Demo"}
+                      <FaExternalLinkAlt size={16} /> Live Demo
                     </motion.a>
                   )}
                   {project.github && (
