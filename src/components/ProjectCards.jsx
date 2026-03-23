@@ -265,9 +265,15 @@ const ProjectCards = ({ project }) => {
               <LiveLinkIcon 
                 onClick={(e) => {
                   e.stopPropagation();
-                  window.open(project.liveUrl, "_blank");
+                  if (project.liveUrl !== "#") {
+                    window.open(project.liveUrl, "_blank");
+                  }
                 }}
-                title="View Live App"
+                title={project.liveUrl === "#" ? "Live Demo Coming Soon" : "View Live App"}
+                style={{
+                  cursor: project.liveUrl === "#" ? "default" : "pointer",
+                  opacity: project.liveUrl === "#" ? 0.7 : 1,
+                }}
               />
             )}
           </div>
@@ -302,9 +308,15 @@ const ProjectCards = ({ project }) => {
                     <LiveLinkIcon 
                       onClick={(e) => {
                         e.stopPropagation();
-                        window.open(project.liveUrl, "_blank");
+                        if (project.liveUrl !== "#") {
+                          window.open(project.liveUrl, "_blank");
+                        }
                       }}
-                      title="View Live App"
+                      title={project.liveUrl === "#" ? "Live Demo Coming Soon" : "View Live App"}
+                      style={{
+                        cursor: project.liveUrl === "#" ? "default" : "pointer",
+                        opacity: project.liveUrl === "#" ? 0.7 : 1,
+                      }}
                     />
                   )}
                 </div>

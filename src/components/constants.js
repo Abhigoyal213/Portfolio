@@ -94,6 +94,7 @@ export const projects = [
     tags: ["HTML", "Tailwind CSS", "JavaScript", "React", "PHP", "AJAX"],
     category: "web app",
     github: "https://github.com/Abhigoyal213/uniChat_",
+    liveUrl: "#",
   },
   {
     id: 2,
