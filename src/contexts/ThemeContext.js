@@ -100,6 +100,20 @@ export const COLOR_PROFILES = [
       '--accent-secondary': '#406aff',
       '--accent-glow': 'rgba(255, 86, 246, 0.51)',
     },
+  },
+  {
+    id: 'deep-ocean',
+    name: 'Deep Ocean',
+    preview: ['#0ea5e9', '#0284c7', '#020617', '#f8fafc'],
+    vars: {
+      '--bg-primary': '#020617',
+      '--bg-secondary': '#0f172a',
+      '--text-primary': '#f8fafc',
+      '--text-secondary': '#94a3b8',
+      '--accent': '#0ea5e9',
+      '--accent-secondary': '#0284c7',
+      '--accent-glow': 'rgba(14, 165, 233, 0.25)',
+    },
   }
 ];
 
@@ -112,7 +126,7 @@ const ThemeContext = createContext({
 
 export function ThemeProvider({ children }) {
   const [activeProfile, setActiveProfile] = useState(COLOR_PROFILES[0]);
-  const [particleMode, setParticleModeState] = useState('none');
+  const [particleMode, setParticleModeState] = useState('starfield');
 
   const applyTheme = useCallback((profile) => {
     const root = document.documentElement;

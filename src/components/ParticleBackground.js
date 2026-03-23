@@ -1,12 +1,20 @@
 import React, { useEffect, useRef } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
+import LightRays from './LightRays';
 
 export default function ParticleBackground() {
   const canvasRef = useRef(null);
   const { activeProfile, particleMode } = useTheme();
 
+    const getThemeColor = (varName, defaultColor) => {
+      if (typeof window === 'undefined') return defaultColor;
+      const root = document.documentElement;
+      const val = getComputedStyle(root).getPropertyValue(varName).trim();
+      return val || defaultColor;
+    };
+
   useEffect(() => {
-    if (!particleMode || particleMode === 'none') return;
+    if (!particleMode || particleMode === 'none' || particleMode === 'rays') return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -19,13 +27,6 @@ export default function ParticleBackground() {
     let width = 0;
     let height = 0;
     let mouse = { x: -1000, y: -1000 };
-
-    const getThemeColor = (varName, defaultColor) => {
-      if (typeof window === 'undefined') return defaultColor;
-      const root = document.documentElement;
-      const val = getComputedStyle(root).getPropertyValue(varName).trim();
-      return val || defaultColor;
-    };
 
     const resize = () => {
       width = window.innerWidth;
@@ -380,18 +381,27 @@ export default function ParticleBackground() {
   if (!particleMode || particleMode === 'none') return null;
 
   return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        pointerEvents: 'none',
-        zIndex: -1,
-        opacity: particleMode === 'rain' ? 0.6 : 1,
-      }}
-    />
+    <>
+      <canvas
+        ref={canvasRef}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          pointerEvents: 'none',
+          zIndex: -1,
+          opacity: particleMode === 'rain' ? 0.6 : 1,
+        }}
+      />
+      {particleMode === 'rays' && (
+        <LightRays 
+          raysColor={getThemeColor('--accent', '#2dd4bf')} 
+          raysOrigin="top-center"
+          raysSpeed={0.5}
+        />
+      )}
+    </>
   );
 }

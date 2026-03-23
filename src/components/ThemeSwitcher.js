@@ -7,7 +7,7 @@ const ThemeSwitcher = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState('themes'); // 'themes' or 'backgrounds'
 
-  const MODES = ['none', 'ghost', 'nodes', 'dust', 'rain', 'circuit', 'starfield', 'firefly'];
+  const MODES = ['starfield', 'rays', 'nodes', 'circuit', 'rain', 'dust', 'firefly', 'ghost', 'none'];
 
   return (
     <div className="relative z-[100]">
