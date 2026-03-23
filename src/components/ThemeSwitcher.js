@@ -13,14 +13,14 @@ const ThemeSwitcher = () => {
     <div className="relative z-[100]">
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-4 md:bottom-auto md:top-8 md:right-8 w-12 h-12 z-50 rounded-full bg-secondary shadow-lg flex items-center justify-center text-accent hover:scale-110 transition-transform duration-300"
+        className="w-12 h-12 z-50 rounded-full bg-secondary shadow-lg flex items-center justify-center text-accent hover:scale-110 transition-all duration-300 border border-white/10"
         aria-label="Toggle Theme Menu"
       >
         <FaPalette size={20} />
       </button>
 
       {isOpen && (
-        <div className="fixed bottom-24 right-4 md:bottom-auto md:top-24 md:right-8 z-50 bg-secondary p-4 rounded-2xl shadow-2xl border border-white/10 w-72 backdrop-blur-lg">
+        <div className="absolute top-14 right-0 md:top-16 z-50 bg-secondary p-4 rounded-2xl shadow-2xl border border-white/10 w-72 backdrop-blur-lg">
           <div className="flex border-b border-white/10 mb-4 pb-2">
             <button
               onClick={() => setActiveTab('themes')}

@@ -9,7 +9,6 @@ import Projects from "./components/Projects";
 import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
-import ThemeSwitcher from "./components/ThemeSwitcher";
 import ParticleBackground from "./components/ParticleBackground";
 import MarqueeTicker from "./components/MarqueeTicker";
 import GhostCursor from "./components/GhostCursor";
@@ -25,7 +24,6 @@ const App = () => {
       ) : (
         <ParticleBackground />
       )}
-      <ThemeSwitcher />
       <Header />
       <Banner />
       <Nav />
